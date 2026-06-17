@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#007AFF">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <h1>MASTERMIND</h1>
+                <p id="difficulty-display">Mode: Easy • Crack the sequence</p>
+            </div>
+            <div class="header-actions">
+                <button id="restart-btn" title="Reset Game">🔄</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="stats">
+                <span id="attempts-left">Attempts Left: 12 / 12</span>
+                <span id="timer" class="timer-badge">0s</span>
+            </div>
+
+            <div id="game-board" class="board-container">
+                <!-- Rows will be injected here -->
+            </div>
+
+            <div id="game-over-banner" class="hidden">
+                <p id="game-over-msg"></p>
+                <div id="secret-reveal" class="peg-row"></div>
+                <button id="try-again-btn">TRY AGAIN</button>
+            </div>
+
+            <div id="color-palette" class="palette-card">
+                <p class="palette-label">CHOOSE COLOR PEG</p>
+                <div class="palette-controls">
+                    <div id="peg-options" class="peg-options">
+                        <!-- Peg choices will be injected here -->
+                    </div>
+                    <button id="clear-btn" title="Clear Draft">🗑️</button>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <button id="play-tab" class="active">Play</button>
+            <button id="settings-tab">Settings</button>
+        </nav>
+    </div>
+
+    <!-- Modals -->
+    <div id="share-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="share-title">🎉 GAME WON!</h2>
+            <p>Share your performance with friends?</p>
+            <button id="share-btn">SHARE RESULTS</button>
+            <button id="dont-ask-btn" class="text-btn">DON'T ASK AGAIN</button>
+            <button id="close-share-btn" class="text-btn">NOT NOW</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>

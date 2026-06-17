@@ -1,0 +1,6 @@
+{
+  "name": "Mastermind",
+  "description": "A classic Mastermind game of code-breaking strategy with customizable difficulties, high-fidelity UI, local leaderboard, sound effects, and smooth animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
